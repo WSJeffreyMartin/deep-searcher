@@ -1,113 +1,98 @@
-# Contributing to DeepSearcher
+# Contributing
+[![GitHub contributors](https://img.shields.io/github/contributors/WebGoat/WebGoat.svg)](https://github.com/WebGoat/WebGoat/graphs/contributors)
+![GitHub issues by-label "help wanted"](https://img.shields.io/github/issues/WebGoat/WebGoat/help%20wanted.svg)
+![GitHub issues by-label "good first issue"](https://img.shields.io/github/issues/WebGoat/WebGoat/good%20first%20issue.svg)
 
-Contributions to DeepSearcher are welcome from everyone. We strive to make the contribution process simple and straightforward.
+This document describes how you can contribute to WebGoat. Please read it carefully.
 
-The following are a set of guidelines for contributing to DeepSearcher. Following these guidelines makes contributing to this project easy and transparent. These are mostly guidelines, not rules. Use your best judgment, and feel free to propose changes to this document in a pull request.
+**Table of Contents**
 
-**Content**
+* [How to Contribute to the Project](#how-to-contribute-to-the-project)
+* [How to set up your Contributor Environment](#how-to-set-up-your-contributor-environment)
+* [How to get your PR Accepted](#how-to-get-your-pr-accepted)
 
-- [Contributing to DeepSearcher](#contributing-to-deepsearcher)  
-  - [How can you contribute?](#how-can-you-contribute)  
-    - [Contributing code](#contributing-code)  
-    - [GitHub workflow](#github-workflow)  
-    - [General guidelines](#general-guidelines)  
-    - [Developer Certificate of Origin (DCO)](#developer-certificate-of-origin-dco)  
-  - [Coding Style](#coding-style)  
-  - [Commits and PRs](#commits-and-prs)  
+## How to Contribute to the project
 
-## How can you contribute?
+There are a couple of ways on how you can contribute to the project:
 
-### Contributing code
+* **File [issues](https://github.com/WebGoat/WebGoat/issues "Webgoat Issues")** for missing content or errors. Explain what you think is missing and give a suggestion as to where it could be added.
+* **Create a [pull request (PR)](https://github.com/WebGoat/WebGoat/pulls "Create a pull request")**. This is a direct contribution to the project and may be merged after review. You should ideally [create an issue](https://github.com/WebGoat/WebGoat/issues "WebGoat Issues") for any PR you would like to submit, as we can first review the merit of the PR and avoid any unnecessary work. This is of course not needed for small modifications such as correcting typos.
+* **Help out financially** by donating via [OWASP donations](https://owasp.org/donate/?reponame=www-project-webgoat&title=OWASP+WebGoat).
 
-**If you encounter a bug, you can**
+## How to get your PR accepted
 
-- (**Recommended**) File an issue about the bug.
-- Provide clear and concrete ways/scripts to reproduce the bug.
-- Provide possible solutions for the bug.
-- Pull a request to fix the bug.
+Your PR is valuable to us, and to make sure we can integrate it smoothly, we have a few items for you to consider. In short:
+The minimum requirements for code contributions are:
 
-**If you're interested in existing issues, you can**
+1. The code _must_ be compliant with the configured Checkstyle and PMD rules.
+2. All new and changed code _should_ have a corresponding unit and/or integration test.
+3. New and changed lessons _must_ have a corresponding integration test.
+4. [Status checks](https://docs.github.com/en/github/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks) should pass for your last commit.
 
-- (**Recommended**) Provide answers for issue labeled `question`.
-- Provide help for issues labeled `bug`, `improvement`, and `enhancement` by
-  - (**Recommended**) Ask questions, reproduce the issue, or provide solutions.
-  - Pull a request to fix the issue.
+Additionally, the following guidelines can help:
 
-**If you require a new feature or major enhancement, you can**
+### Keep your pull requests limited to a single issue
 
-- (**Recommended**) File an issue about the feature/enhancement with reasons.
-- Provide an MEP for the feature/enhancement.
-- Pull a request to implement the MEP.
+Pull requests should be as small/atomic as possible. Large, wide-sweeping changes in a pull request will be **rejected**, with comments to isolate the specific code in your pull request. Some examples:
 
-**If you are a reviewer/approver of DeepSearcher, you can**
+* If you are making spelling corrections in the docs, don't modify other files.
+* If you are adding new functions don't '*cleanup*' unrelated functions. That cleanup belongs in another pull request.
 
-- Participate in PR review process.
-- Instruct newcomers in the community to complete the PR process.
 
-If you want to become a contributor of DeepSearcher, submit your pull requests! For those just getting started, see [GitHub workflow](#github-workflow) below.
+### Write a good commit message
 
-All submissions will be reviewed as quickly as possible.
-There will be a reviewer to review the codes, and an approver to review everything aside the codes.
-If everything is perfect, the reviewer will label `/lgtm`, and the approver will label `/approve`.
-Once the 2 labels are on your PR, and all actions pass, your PR will be merged into base branch automatically by our @sre-ci-robot
+* Explain why you make the changes. [More infos about a good commit message.](https://betterprogramming.pub/stop-writing-bad-commit-messages-8df79517177d)
 
-### GitHub workflow
+* If you fix an issue with your commit, please close the issue by [adding one of the keywords and the issue number](https://docs.github.com/en/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) to your commit message.
 
-Generally, we follow the "fork-and-pull" Git workflow.
+  For example: `Fix #545` or `Closes #10`
 
-1.  [Fork](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) the repository on GitHub.
-2.  Clone your fork to your local machine with `git clone git@github.com:<yourname>/deep-searcher.git`.
-3.  Create a branch with `git checkout -b my-topic-branch`.
-4.  [Commit](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/committing-changes-to-a-pull-request-branch-created-from-a-fork) changes to your own branch, then push to GitHub with `git push origin my-topic-branch`.
-5.  Submit a [pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) so that we can review your changes.
+## How to set up your Contributor Environment
 
-Remember to [sync your forked repository](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo#keep-your-fork-synced) _before_ submitting proposed changes upstream. If you have an existing local repository, please update it before you start, to minimize the chance of merge conflicts.
+1. Create a GitHub account. Multiple different GitHub subscription plans are available, but you only need a free one. Follow [these steps](https://help.github.com/en/articles/signing-up-for-a-new-github-account "Signing up for a new GitHub account") to set up your account.
+2. Fork the repository. Creating a fork means creating a copy of the repository on your own account, which you can modify without any impact on this repository. GitHub has an [article that describes all the needed steps](https://help.github.com/en/articles/fork-a-repo "Fork a repo").
+3. Clone your own repository to your host computer so that you can make modifications. If you followed the GitHub tutorial from step 2, you have already done this.
+4. Go to the newly cloned directory "WebGoat" and add the remote upstream repository:
 
-```shell
-git remote add upstream git@github.com:zilliztech/deep-searcher.git
-git fetch upstream
-git checkout upstream/master -b my-topic-branch
-```
+    ```bash
+    $ git remote -v
+    origin git@github.com:<your Github handle>/WebGoat.git (fetch)
+    origin git@github.com:<your Github handle>/WebGoat.git (push)
 
-### General guidelines
+    $ git remote add upstream git@github.com:WebGoat/WebGoat.git
 
-Before submitting your pull requests for review, make sure that your changes are consistent with the coding style.
+    $ git remote -v
+    origin git@github.com:<your Github handle>/WebGoat.git (fetch)
+    origin git@github.com:<your Github handle>/WebGoat.git (push)
+    upstream git@github.com:OWASP/WebGoat.git (fetch)
+    upstream git@github.com:OWASP/WebGoat.git (push)
+    ```
 
-### Developer Certificate of Origin (DCO)
+    See also the GitHub documentation on "[Configuring a remote for a fork](https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork "Configuring a remote for a fork")".
+5. Choose what to work on, based on any of the outstanding [issues](https://github.com/WebGoat/WebGoat/issues "WebGoat Issues").
+6. Create a branch so that you can cleanly work on the chosen issue: `git checkout -b FixingIssue66`
+7. Open your favorite editor and start making modifications. We recommend using the [IntelliJ Idea](https://www.jetbrains.com/idea/).
+8. After your modifications are done, push them to your forked repository. This can be done by executing the command `git add MYFILE` for every file you have modified, followed by `git commit -m 'your commit message here'` to commit the modifications and `git push` to push your modifications to GitHub.
+9. Create a Pull Request (PR) by going to your fork, <https://github.com/Your_Github_Handle/WebGoat> and click on the "New Pull Request" button. The target branch should typically be the Master branch. When submitting a PR, be sure to follow the checklist that is provided in the PR template. The checklist itself will be filled out by the reviewer.
+10. Your PR will be reviewed and comments may be given. In order to process a comment, simply make modifications to the same branch as before and push them to your repository. GitHub will automatically detect these changes and add them to your existing PR.
+11. When starting on a new PR in the future, make sure to always keep your local repo up to date:
 
-All contributions to this project must be accompanied by acknowledgment of, and agreement to, the [Developer Certificate of Origin](https://developercertificate.org/). Acknowledgment of and agreement to the Developer Certificate of Origin _must_ be included in the comment section of each contribution and _must_ take the form of `Signed-off-by: {{Full Name}} <{{email address}}>` (without the `{}`). Contributions without this acknowledgment will be required to add it before being accepted. If contributors are unable or unwilling to agree to the Developer Certificate of Origin, their contribution will not be included.
+    ```bash
+    $ git fetch upstream
+    $ git merge upstream/develop
+    ```
 
-Contributors sign-off that they adhere to DCO by adding the following Signed-off-by line to commit messages:
+    See also the following article for further explanation on "[How to Keep a Downstream git Repository Current with Upstream Repository Changes](https://medium.com/sweetmeat/how-to-keep-a-downstream-git-repository-current-with-upstream-repository-changes-10b76fad6d97 "How to Keep a Downstream git Repository Current with Upstream Repository Changes")".
 
-```text
-This is my commit message
+If at any time you want to work on a different issue, you can simply switch to a different branch, as explained in step 5.
 
-Signed-off-by: Random J Developer <random@developer.example.org>
-```
+> Tip: Don't try to work on too many issues at once though, as it will be a lot more difficult to merge branches the longer they are open.
 
-Git also has a `-s` command line option to append this automatically to your commit message:
+## What not to do
 
-```shell
-$ git commit -s -m 'This is my commit message'
-```
+Although we greatly appreciate any and all contributions to the project, there are a few things that you should take into consideration:
 
-## Coding Style
+* The WebGoat project should not be used as a platform for advertisement for commercial tools, companies or individuals. Write-ups should be written with free and open-source tools in mind and commercial tools are typically not accepted, unless as a reference in the security tools section.
+* Unnecessary self-promotion of tools or blog posts is frowned upon. If you have a relation with on of the URLs or tools you are referencing, please state so in the PR so that we can verify that the reference is in line with the rest of the guide.
 
-Keeping a consistent style for code, code comments, commit messages, and PR descriptions will greatly accelerate your PR review process.
-We highly recommend you run code linter and formatter when you put together your pull requests:
-
-To check the coding styles:
-
-```shell
-make lint
-```
-
-To fix the coding styles:
-
-```shell
-make format
-```
-
-## Commits and PRs
-
-- Commit message and PR description style: refer to [good commit messages](https://chris.beams.io/posts/git-commit)
+Please be sure to take a careful look at our [Code of Conduct](https://github.com/WebGoat/WebGoat/blob/master/CODE_OF_CONDUCT.md) for all the details.
