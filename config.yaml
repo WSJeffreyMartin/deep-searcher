@@ -106,3 +106,8 @@ query_settings:
 load_settings:
   chunk_size: 1500
   chunk_overlap: 100
+
+
+
+
+
