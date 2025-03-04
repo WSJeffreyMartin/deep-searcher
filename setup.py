@@ -26,4 +26,6 @@ setup(
     author="Cheney Zhang",
     author_email="277584121@qq.com",
     url="https://github.com/zilliztech/deep-searcher",
+
+    
 )
