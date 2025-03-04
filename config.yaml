@@ -26,8 +26,8 @@ provide_settings:
 
 llm:
   name: 'syc-gpt-j-6b-dup'
-  #type: 'asdef'
-  #temperature: 0.8
+  type: 'asdef'
+  temperature: 0.8
 
 llm:
   name: 'test-msc-model'
